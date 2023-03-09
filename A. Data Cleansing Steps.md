@@ -40,6 +40,7 @@ _`*` represent new columns_
 | segment | No changes
 | age_band* | Use `CASE WHEN` and based on `segment`, 1 = `Young Adults`, 2 = `Middle Aged`, 3/4 = `Retirees` and null = `Unknown`
 | demographic* | Use `CASE WHEN` and based on `segment`, C = `Couples` and F = `Families` and null = `Unknown`
+|customer_type| No changes
 | transactions | No changes
 | avg_transaction* | Divide `sales` with `transactions` and round up to 2 decimal places
 | sales | No changes
