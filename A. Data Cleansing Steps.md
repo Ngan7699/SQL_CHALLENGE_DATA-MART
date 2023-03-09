@@ -51,7 +51,7 @@ _`*` represent new columns_
 drop table if exists clean_weekly_sales;
 select 
 CONVERT(date,week_date,3) as week_date,
-DATEPART(weekday,CONVERT(date,week_date,3)) as week_number,
+DATEPART(week,CONVERT(date,week_date,3)) as week_number,
 DATEPART(month,CONVERT(date,week_date,3)) as month_number,
 DATEPART(YEAR,CONVERT(date,week_date,3)) as calendar_year,
 region,
@@ -72,7 +72,7 @@ into clean_weekly_sales
 from weekly_sales;
 ````
 
-![image](https://user-images.githubusercontent.com/125182638/223919044-cc23a78b-59d3-46bb-bf53-e64f4619c04c.png)
+![image](https://user-images.githubusercontent.com/125182638/223987988-ee76b4d6-bc3a-4f6b-a641-6f2d17cee326.png)
 
 ***
 
