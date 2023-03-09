@@ -51,7 +51,7 @@ Each record in the dataset is related to a specific aggregated slice of the unde
 
 ### A. Data Cleansing Steps
 
-View my solution [here](https://github.com/Ngan7699/SQL_CHALLENGE_DATA-MART/blob/main/A.%20Data%20Cleansing%20Steps).
+View my solution [here](https://github.com/Ngan7699/SQL_CHALLENGE_DATA-MART/blob/main/A.%20Data%20Cleansing%20Steps.md).
 
 In a single query, perform the following operations and generate a new table in the `data_mart` schema named `clean_weekly_sales`:
 - Convert the `week_date` to a `DATE` format
