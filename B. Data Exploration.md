@@ -1,4 +1,4 @@
-# 🛒 Case Study #5 - Data Mart
+# 🛒 SQL_CHALLENGE_DATA-MART
 
 ## 🛍 Solution - B. Data Exploration
 
@@ -150,7 +150,8 @@ order by calendar_year;
 
 **8. Which age_band and demographic values contribute the most to Retail sales?**
 
-````with sales_retail_cte as
+````sql
+with sales_retail_cte as
 (
 select age_band,
 	   demographic,
@@ -174,28 +175,4 @@ order by contribute_sales desc;
 
 The highest retail sales are contributed by unknown `age_band` and `demographic` at 42% followed by retired families at 16.73% and retired couples at 16.07%.
 
-**9. Can we use the avg_transaction column to find the average transaction size for each year for Retail vs Shopify? If not - how would you calculate it instead?**
-
-````sql
-SELECT 
-  calendar_year, 
-  platform, 
-  ROUND(AVG(avg_transaction),0) AS avg_transaction_row, 
-  SUM(sales) / sum(transactions) AS avg_transaction_group
-FROM clean_weekly_sales
-GROUP BY calendar_year, platform
-ORDER BY calendar_year, platform;
-````
-
-**Answer:**
-
-<img width="636" alt="image" src="https://user-images.githubusercontent.com/81607668/131635398-0d54f57b-b813-4a2f-9d9c-320cf033ff97.png">
-
-What's the difference between `avg_transaction_row` and `avg_transaction_group`?
-- `avg_transaction_row` is the average transaction in dollars by taking each row's sales divided by the row's number of transactions.
-- `avg_transaction_group` is the average transaction in dollars by taking total sales divided by total number of transactions for the entire data set.
-
-The more accurate answer to find average transaction size for each year by platform would be `avg_transaction_group`.
-
 ***
-
